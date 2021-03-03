@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
         content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
@@ -69,7 +69,7 @@
                         <!-- Search -->
                         <!-- ============================================================== -->
                         <li class=" in">
-                            
+                          
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
@@ -89,7 +89,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-
+                      
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="input-data.php"
                                 aria-expanded="false">
@@ -104,7 +104,7 @@
                                 <span class="hide-menu">List Data</span>
                             </a>
                         </li>
-                       
+                   
                     </ul>
 
                 </nav>
@@ -119,59 +119,88 @@
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
         <div class="page-wrapper">
-        
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
             <div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+                <!-- Row -->
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title">Basic Table</h3>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">#</th>
-                                            <th class="border-top-0">First Name</th>
-                                            <th class="border-top-0">Last Name</th>
-                                            <th class="border-top-0">Username</th>
-                                            <th class="border-top-0">Role</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                                                                
-                                        <?php 
-                                            include "conn.php";
-                                        
-                                            $sql = "SELECT * FROM tb_rekapan";
-                                            $query = mysqli_query($conn, $sql);
-                                            $nomor =1;
-                                            while ($data = mysqli_fetch_array($query)) {
-                                        ?>
-                                                    <tr>
-                                                <td><?php echo $nomor++; ?></td>
-                                                <td><?php echo $data['sp']; ?></td>
-                                                <td><?php echo $data['colli']; ?></td>  
-                                                <td><?php echo $data['berat']; ?></td>
-                                                <td><?php echo $data['franco']; ?></td>
-                                                <td><?php echo $data['confrankert']; ?></td>
-                                                <td><?php echo $data['penerimaBarang']; ?></td>
-                                                <td><?php echo $data['keterangan']; ?></td>
-                                                <td>
-                                                    <a class="edit" href="edit-data.php?id= <?php echo $data['id']; ?>">Edit</a> |
-                                                    <a class="hapus" href="hapus.php?id=<?php  echo $data['id']; ?>">Hapus</a> 
-                                                </td>
-                                            </tr>                             
-                                                                            
-                                        <?php
-                                        } ?>
-                                    </tbody>
-                                </table>
+                    <!-- Column -->
+                   
+                    <!-- Column -->
+                    <div class="col-lg-12 col-xlg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                            <?php  
+       include "conn.php";
+       $id = $_GET['id'];
+       $sql = "SELECT * FROM tb_rekapan WHERE id='$id'";
+       $query = mysqli_query($conn, $sql);
+
+       $nomor = 1;
+       while ($data = mysqli_fetch_array($query)) {
+       ?>
+                                <form class="form-horizontal form-material" action="edit-process.php" method="post">
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">SP</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" class="form-control p-0 border-0" name="sp" value="<?php echo $data['sp'] ?>"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Colli</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" class="form-control p-0 border-0" name="colli" value="<?php echo $data['colli'] ?>"> </div>
+                                    </div>
+                                   
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Berat</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" class="form-control p-0 border-0" name="berat" value="<?php echo $data['berat'] ?>"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Franco</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text"class="form-control p-0 border-0" name="franco" value="<?php echo $data['franco'] ?>"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Confrankert</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text"class="form-control p-0 border-0" name="confrankert" value="<?php echo $data['confrankert'] ?>"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Penerima Barang</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" class="form-control p-0 border-0" name="penerima" value="<?php echo $data['penerimaBarang'] ?>"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Keterangan</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" class="form-control p-0 border-0" name="keterangan" value="<?php echo $data['keterangan'] ?>"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success">Upload</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <?php
+    } ?>
                             </div>
                         </div>
                     </div>
+                    <!-- Column -->
                 </div>
+             
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->

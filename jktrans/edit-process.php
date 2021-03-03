@@ -14,6 +14,6 @@ $sql = "UPDATE tb_rekapan SET sp='$sp', colli='$colli', berat='$berat', franco='
 $query = mysqli_query($conn, $sql);
 
 
-header("location:index.php");
+header("location:input-data.php");
 
 ?>

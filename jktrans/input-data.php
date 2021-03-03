@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
         content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
@@ -17,18 +17,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
    <link href="css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
 
 <body>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
     <div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
@@ -46,13 +36,13 @@
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin6">
-                   
+                    
+                    </a>
+                  
                     <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
                         href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
+           
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
                     <ul class="navbar-nav d-none d-md-block d-lg-none">
                         <li class="nav-item">
@@ -69,7 +59,7 @@
                         <!-- Search -->
                         <!-- ============================================================== -->
                         <li class=" in">
-                            
+                          
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
@@ -89,7 +79,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-
+                      
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="input-data.php"
                                 aria-expanded="false">
@@ -104,74 +94,73 @@
                                 <span class="hide-menu">List Data</span>
                             </a>
                         </li>
-                       
                     </ul>
-
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
             <!-- End Sidebar scroll-->
         </aside>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+     
         <div class="page-wrapper">
         
             <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
+               
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title">Basic Table</h3>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">#</th>
-                                            <th class="border-top-0">First Name</th>
-                                            <th class="border-top-0">Last Name</th>
-                                            <th class="border-top-0">Username</th>
-                                            <th class="border-top-0">Role</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                                                                
-                                        <?php 
-                                            include "conn.php";
-                                        
-                                            $sql = "SELECT * FROM tb_rekapan";
-                                            $query = mysqli_query($conn, $sql);
-                                            $nomor =1;
-                                            while ($data = mysqli_fetch_array($query)) {
-                                        ?>
-                                                    <tr>
-                                                <td><?php echo $nomor++; ?></td>
-                                                <td><?php echo $data['sp']; ?></td>
-                                                <td><?php echo $data['colli']; ?></td>  
-                                                <td><?php echo $data['berat']; ?></td>
-                                                <td><?php echo $data['franco']; ?></td>
-                                                <td><?php echo $data['confrankert']; ?></td>
-                                                <td><?php echo $data['penerimaBarang']; ?></td>
-                                                <td><?php echo $data['keterangan']; ?></td>
-                                                <td>
-                                                    <a class="edit" href="edit-data.php?id= <?php echo $data['id']; ?>">Edit</a> |
-                                                    <a class="hapus" href="hapus.php?id=<?php  echo $data['id']; ?>">Hapus</a> 
-                                                </td>
-                                            </tr>                             
-                                                                            
-                                        <?php
-                                        } ?>
-                                    </tbody>
-                                </table>
+                    <!-- Column -->
+                   
+                    <!-- Column -->
+                    <div class="col-lg-12 col-xlg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-horizontal form-material" action="input-process.php" method="post">
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">SP</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" class="form-control p-0 border-0" name="sp"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Colli</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" class="form-control p-0 border-0" name="colli"> </div>
+                                    </div>
+                                   
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Berat</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" class="form-control p-0 border-0" name="berat"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Franco</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text"class="form-control p-0 border-0" name="franco"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Confrankert</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text"class="form-control p-0 border-0" name="confrankert"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Penerima Barang</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" class="form-control p-0 border-0" name="penerima"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Keterangan</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" class="form-control p-0 border-0" name="keterangan"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success">Upload</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                    <!-- Column -->
                 </div>
+             
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
