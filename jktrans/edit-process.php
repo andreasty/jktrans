@@ -1,6 +1,7 @@
 <?php
 
 include 'conn.php';
+$id = $_POST['id'];
 $sp = $_POST['sp'];
 $colli = $_POST['colli'];
 $berat = $_POST['berat'];
